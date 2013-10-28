@@ -1,0 +1,33 @@
+<h1>Resources</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Level</th>
+      <th>Cost</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resources.each do |resource| %>
+      <tr>
+        <td><%= link_to resource.name, resource %>
+        <p><%= resource.description %></p>
+        <%= link_to 'Edit', edit_resource_path(resource) %>
+        <%= link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= resource.kind %></td>
+        <td><%= resource.level %></td>
+        <td><%= resource.cost %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<button><%= link_to 'Add a new resource', new_resource_path %></button>
