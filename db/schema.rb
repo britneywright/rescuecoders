@@ -11,15 +11,74 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131026061417) do
+ActiveRecord::Schema.define(version: 20131031015926) do
+
+  create_table "formats", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "formats_resources", id: false, force: true do |t|
+    t.integer "format_id"
+    t.integer "resource_id"
+  end
+
+  create_table "kinds", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "kinds_resources", id: false, force: true do |t|
+    t.integer "kind_id"
+    t.integer "resource_id"
+  end
+
+  create_table "languages", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "languages_resources", id: false, force: true do |t|
+    t.integer "language_id"
+    t.integer "resource_id"
+  end
+
+  create_table "levels", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "levels_resources", id: false, force: true do |t|
+    t.integer "level_id"
+    t.integer "resource_id"
+  end
+
+  create_table "models", force: true do |t|
+    t.string   "Language"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "prices", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "prices_resources", id: false, force: true do |t|
+    t.integer "price_id"
+    t.integer "resource_id"
+  end
 
   create_table "resources", force: true do |t|
     t.string   "name"
     t.string   "url"
     t.text     "description"
-    t.string   "kind"
-    t.string   "level"
-    t.string   "cost"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

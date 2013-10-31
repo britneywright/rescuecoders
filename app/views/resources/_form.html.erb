@@ -25,15 +25,31 @@
   </div>
   <div class="field">
     <%= f.label :kind %><br>
-    <%= f.text_field :kind %>
+    <% for kind in Kind.find(:all) %>
+      <%= check_box_tag "resource[kind_ids][]", kind.id, @resource.kinds.include?(kind.id) %>
+      <%= kind.name %>
+    <% end %> 
   </div>
   <div class="field">
     <%= f.label :level %><br>
-    <%= f.text_field :level %>
+    <% for level in Level.find(:all) %>
+      <%= check_box_tag "resource[level_ids][]", level.id, @resource.levels.include?(level.id) %>
+      <%= level.name %>
+    <% end %> 
   </div>
   <div class="field">
-    <%= f.label :cost %><br>
-    <%= f.text_field :cost %>
+    <%= f.label :price %><br>
+    <% for price in Price.find(:all) %>
+      <%= check_box_tag "resource[price_ids][]", price.id, @resource.prices.include?(price.id) %>
+      <%= price.name %>
+    <% end %> 
+  </div>
+  <div class="field">
+    <%= f.label :language %><br>    
+    <% for language in Language.find(:all) %>
+      <%= check_box_tag "resource[language_ids][]", language.id, @resource.languages.include?(language.id) %>
+      <%= language.name %>
+    <% end %>  
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,4 +1,12 @@
 Learning::Application.routes.draw do
+  resources :kinds
+
+  resources :prices
+
+  resources :levels
+
+  resources :languages
+
   root 'static_pages#home'
   match '/about', to: "static_pages#about", via: 'get'
   resources :resources

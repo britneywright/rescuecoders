@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h2>
+  <strong>Language:</strong>
+  <%= @language.name %>
+</h2>
+
+<p>
+	<% @language.resources.each do |r| %>
+		<h3><%= link_to r.name, r %></h3>
+		<p><%= r.description %></p>
+	<% end %>
+</p>
+
+<%= link_to 'Edit', edit_language_path(@language) %> |
+<%= link_to 'Back', languages_path %>
