@@ -15,10 +15,12 @@ class LanguagesController < ApplicationController
   # GET /languages/new
   def new
     @language = Language.new
+    @resources = Resource.all
   end
 
   # GET /languages/1/edit
   def edit
+    @resources = Resource.all
   end
 
   # POST /languages
@@ -69,6 +71,6 @@ class LanguagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def language_params
-      params.require(:language).permit(:name, {:resource_ids =>[]})
+      params.require(:language).permit(:name, :resource_ids =>[])
     end
 end

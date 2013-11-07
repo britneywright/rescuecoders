@@ -15,10 +15,12 @@ class PricesController < ApplicationController
   # GET /prices/new
   def new
     @price = Price.new
+    @resources = Resource.all
   end
 
   # GET /prices/1/edit
   def edit
+    @resources = Resource.all
   end
 
   # POST /prices
@@ -69,6 +71,6 @@ class PricesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def price_params
-      params.require(:price).permit(:name, {:resource_ids =>[]})
+      params.require(:price).permit(:name, :resource_ids =>[])
     end
 end

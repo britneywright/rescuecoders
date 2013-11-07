@@ -1,3 +1,3 @@
 class Kind < ActiveRecord::Base
-	has_and_belongs_to_many :kinds
+	has_and_belongs_to_many :resources
 end

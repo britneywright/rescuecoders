@@ -15,10 +15,18 @@ class ResourcesController < ApplicationController
   # GET /resources/new
   def new
     @resource = Resource.new
+    @kinds = Kind.all
+    @languages = Language.all
+    @levels = Level.all
+    @prices = Price.all
   end
 
   # GET /resources/1/edit
   def edit
+    @kinds = Kind.all
+    @languages = Language.all
+    @levels = Level.all
+    @prices = Price.all    
   end
 
   # POST /resources
@@ -69,6 +77,6 @@ class ResourcesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def resource_params
-      params.require(:resource).permit(:name, :url, :description, {:language_ids =>[]}, {:kind_ids =>[]}, {:level_ids =>[]}, {:price_ids =>[]})
+      params.require(:resource).permit(:name, :url, :description, :language_ids =>[], :kind_ids =>[], :level_ids =>[], :price_ids =>[])
     end
 end

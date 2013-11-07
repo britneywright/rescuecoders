@@ -15,10 +15,12 @@ class LevelsController < ApplicationController
   # GET /levels/new
   def new
     @level = Level.new
+    @resources = Resource.all
   end
 
   # GET /levels/1/edit
   def edit
+    @resources = Resource.all
   end
 
   # POST /levels
@@ -69,6 +71,6 @@ class LevelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def level_params
-      params.require(:level).permit(:name, {:resource_ids =>[]})
+      params.require(:level).permit(:name, :resource_ids =>[])
     end
 end

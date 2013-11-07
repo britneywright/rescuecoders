@@ -15,10 +15,12 @@ class KindsController < ApplicationController
   # GET /kinds/new
   def new
     @kind = Kind.new
+    @resources = Resource.all
   end
 
   # GET /kinds/1/edit
   def edit
+    @resources = Resource.all
   end
 
   # POST /kinds
@@ -69,6 +71,6 @@ class KindsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def kind_params
-      params.require(:kind).permit(:name, {:resource_ids =>[]})
+      params.require(:kind).permit(:name, :resource_ids =>[])
     end
 end
