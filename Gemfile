@@ -3,9 +3,11 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 
-group :development do
+group :development, :test do
 	gem 'sqlite3'
 	gem 'rspec-rails', '2.13.1'
+	gem 'spork-rails', '4.0.0'
+	gem 'childprocess', '0.3.6'
 end
 
 group :test do
@@ -15,6 +17,7 @@ end
 
 gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 3.0.1.0.rc'
+gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'

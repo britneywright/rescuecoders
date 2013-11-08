@@ -1,14 +1,14 @@
 Learning::Application.routes.draw do
-  resources :kinds
-
-  resources :prices
-
-  resources :levels
-
-  resources :languages
-
+  get "users/new"
+  
   root 'static_pages#home'
-  match '/about', to: "static_pages#about", via: 'get'
+  match '/signup', to: 'users#new', via: 'get'
+  match '/about', to: 'static_pages#about', via: 'get'
+  resources :kinds
+  resources :prices
+  resources :levels
+  resources :languages
+  resources :users
   resources :resources
 
   # The priority is based upon order of creation: first created -> highest priority.
