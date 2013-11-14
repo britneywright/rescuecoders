@@ -48,5 +48,10 @@
 </div>
 </div>
 
+<%= button_to "like", likes_path(user: @likes) do %>
+Like <strong><%= @resource.name %></strong>
+<% end %>
+
+
 <%= link_to 'Edit', edit_resource_path(@resource) %> |
 <%= link_to 'Back', resources_path %>

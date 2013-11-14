@@ -3,7 +3,9 @@
 Rescue Coders is my Ruby on Rails project that I hope to develop as I continue learning Ruby and Ruby on Rails. The application will include information on resources people can use to learn to code. I hope to add a rating system, comments and user profiles. 
 
 10/27/2013
-* The nav button doesn't appear to be working on the first version. Other javascript elements I tested do though. Someone else documented this on Stack Overflow this evening (http://stackoverflow.com/questions/19626048/bootstrap-sass-nav-dropdown-doesnt-work) so I'll monitor for a response.
+* ~The nav button doesn't appear to be working on the first version. Other javascript elements I tested do though. Someone else documented this on Stack Overflow this evening (http://stackoverflow.com/questions/19626048/bootstrap-sass-nav-dropdown-doesnt-work) so I'll monitor for a response.~
+
+...Update 11/11/2013: Figured it out after going over the Twitter Bootstrap documentation with a fine tooth comb for the millionth time. Needed to match the data-target in the nav button with the id in the menu links div. Answered the Stack Overflow question.
 
 * So far I've created a model for resources and implemented Twitter bootstrap for the styling.
 

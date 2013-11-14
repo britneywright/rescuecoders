@@ -1,9 +1,11 @@
 Learning::Application.routes.draw do
+  resources :users do
+    resources :likes
+  end
   resources :kinds
   resources :prices
   resources :levels
   resources :languages
-  resources :users
   resources :resources  
   resources :sessions, only: [:new, :create, :destroy]
   root to: 'static_pages#home'
