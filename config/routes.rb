@@ -1,6 +1,7 @@
 Learning::Application.routes.draw do
   resources :users do
-    resources :likes
+    resources :likes, only: [:index, :create, :destroy]
+    resources :dislikes, only: [:index, :create, :destroy]
   end
   resources :kinds
   resources :prices

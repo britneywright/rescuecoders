@@ -1,0 +1,28 @@
+<% if current_user.likes?(@resource) %>
+	<div class="row">
+		<div class="col-md-6">
+			<%= render 'unlike' %> 
+		</div>
+		<div class="col-md-6">
+			<%= render 'dislike' %>
+		</div>
+	</div>	
+<% elsif current_user.dislikes?(@resource) %>
+	<div class="row">
+		<div class="col-md-6">	
+			<%= render 'like' %>
+		</div>
+		<div class="col-md-6">
+			<%= render 'undislike' %>
+		</div>
+	</div>	
+<% else %>
+	<div class="row">
+		<div class="col-md-6">
+			<%= render 'like' %>
+		</div>
+		<div class="col-md-6">
+			<%= render 'dislike' %>
+		</div>
+	</div>	
+<% end %>

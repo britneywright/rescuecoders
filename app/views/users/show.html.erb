@@ -1,11 +1,21 @@
 <% provide(:title, @user.name) %>
+
 <div class="row">
-	<aside class="span4">
-		<section>
-			<h1>
+	<div class="row">
+		<div class="col-md-4">
 				<%= gravatar_for @user %>
-				<%= @user.name %>
-			</h1>
-		</section>
+				<h2><%= @user.name %></h2>
+		</div>	
+	</div>
+
+	<aside class="col-md-4">
+		<div class="well">
+			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+		</div>	
 	</aside>
+
+<span class="col-md-8">	
+	<%= render 'likes' %>
+</span>	
+
 </div>			

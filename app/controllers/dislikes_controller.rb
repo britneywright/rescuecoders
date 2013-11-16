@@ -1,11 +1,11 @@
-class LikesController < ApplicationController
+class DislikesController < ApplicationController
 
 	def index
-		@likes = user.likes
+		@dislikes = user.dislikes
 	end
 		
 	def create
-		@like = user.like(resource)
+		@dislike = user.dislike(resource)
 		redirect_to user
 	end
 

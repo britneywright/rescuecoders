@@ -6,6 +6,9 @@
 
 <div class="row">
   <div class="col-md-4">
+    <p>
+    <%= render 'likes_button' if signed_in? %>
+  </p>
 <div class="well">
 <p>
   <strong>Url:</strong>
@@ -38,6 +41,8 @@
       <%= link_to p.name, p %>
     <% end %></p>
 </div>
+<%= link_to 'Edit', edit_resource_path(@resource), class: "btn btn-default" %> 
+<%= link_to 'Back', resources_path, class: "btn btn-default" %>
 </div>
 
 <div class="col-md-8">
@@ -46,12 +51,3 @@
   <%= @resource.description %>
 </p>
 </div>
-</div>
-
-<%= button_to "like", likes_path(user: @likes) do %>
-Like <strong><%= @resource.name %></strong>
-<% end %>
-
-
-<%= link_to 'Edit', edit_resource_path(@resource) %> |
-<%= link_to 'Back', resources_path %>

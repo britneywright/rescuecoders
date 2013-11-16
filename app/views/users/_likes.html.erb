@@ -1,0 +1,27 @@
+<% if @user.likes.present? || @user.dislikes.present? %>
+
+<h2>Recommendations</h2>
+
+	<% if @user.likes.present? %>	
+	<div class="row">
+			<h3>Likes</h3>
+		<ul>
+			<li><%= raw(@user.likes.map {|r| link_to r.name, r}.join("\n")) %></li>
+		</ul>
+	</div>
+	<% else %>
+	<% end %>	
+
+	<% if @user.dislikes.present? %>	
+	<div class="row">	
+		<h3>Dislikes</h3>
+		<ul>
+			<li><%= raw(@user.dislikes.map {|r| link_to r.name, r}.join("\n")) %></li>
+		</ul>
+	</div>	
+	<% else %>
+	<% end %>
+
+<% else %>
+<%= @user.name %> has not rated any resources yet.
+<% end %>
