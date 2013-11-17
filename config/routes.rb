@@ -3,11 +3,7 @@ Learning::Application.routes.draw do
     resources :likes, only: [:index, :create, :destroy]
     resources :dislikes, only: [:index, :create, :destroy]
   end
-  resources :kinds
-  resources :prices
-  resources :levels
-  resources :languages
-  resources :resources  
+  resources :resources, :kinds, :prices, :levels, :languages
   resources :sessions, only: [:new, :create, :destroy]
   root to: 'static_pages#home'
   match '/signup', to: 'users#new', via: 'get'

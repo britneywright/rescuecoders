@@ -1,10 +1,8 @@
 <% provide(:title, @resource.name) %>
-
 <p id="notice"><%= notice %></p>
-
   <h2><%= @resource.name %></h2>
 
-<div class="row">
+
   <div class="col-md-4">
     <p>
     <%= render 'likes_button' if signed_in? %>
@@ -41,6 +39,7 @@
       <%= link_to p.name, p %>
     <% end %></p>
 </div>
+
 <%= link_to 'Edit', edit_resource_path(@resource), class: "btn btn-default" %> 
 <%= link_to 'Back', resources_path, class: "btn btn-default" %>
 </div>

@@ -1,11 +1,10 @@
 <div class="row">
-  <div class="span6 offset3">
+  <div class="col-md-6 col-md-offset-3">
 
 <%= form_for(@resource) do |f| %>
   <% if @resource.errors.any? %>
-    <div id="error_explanation">
+    <div class="alert alert-warning">
       <h2><%= pluralize(@resource.errors.count, "error") %> prohibited this resource from being saved:</h2>
-
       <ul>
       <% @resource.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -28,7 +27,7 @@
   </div>
   <div class="field"> 
     <%= f.label :kind %><br>
-    <%= collection_check_boxes(:resource, :kind_ids, Kind.all, :id, :name) %>
+     <%= collection_check_boxes(:resource, :kind_ids, Kind.all, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :level %><br>

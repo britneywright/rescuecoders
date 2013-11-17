@@ -137,6 +137,16 @@ input {
   height: auto !important;
 }
 
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  width: 20px;
+  margin-bottom: 15px;
+  }
+label{
+  margin-right: 15px;
+  }
+
 #error_explanation {
   color: #f00;
   ul {
