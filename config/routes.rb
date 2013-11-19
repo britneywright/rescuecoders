@@ -2,9 +2,10 @@ Learning::Application.routes.draw do
   resources :users do
     member do
       get :following, :followers
-    end    
-    resources :likes, only: [:index, :create, :destroy]
-    resources :dislikes, only: [:index, :create, :destroy]
+    end
+    resources :likes, only: [:create, :destroy, :index]
+    resources :dislikes, only: [:create, :destroy, :index]
+
   end
   resources :resources, :kinds, :prices, :levels, :languages
   resources :sessions, only: [:new, :create, :destroy]

@@ -17,4 +17,8 @@ Rescue Coders is my Ruby on Rails project that I hope to develop as I continue l
 * Created a user model with sign up, sign in and sign out.
 
 11/16/2013
-Implemented recommendable gem and redis db.
+* Implemented recommendable gem and redis db.
+
+11/19/2013
+* Added relationships between users
+* Updates to user page and home page for signed in users.

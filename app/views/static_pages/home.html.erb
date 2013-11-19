@@ -1,11 +1,50 @@
 <% if signed_in? %>
 
+<div class="row">
+	<div class="col-md-4">
+		<section>
+			<%= render 'shared/stats' %>
+		</section>
+		<section>
+			<%= render 'shared/recommendations' %>
+		</section>
+	</div>
+	<div class="col-md-8">
+	<% if @user.recommended_resources.present? %>
+		<div class="row">
+			<h3>Recommended for You</h3>
+			<ul>
+			<li><%= raw(@user.recommended_resources.map {|r| link_to r.name, r}.join("\n")) %></li>
+		</ul>
+		</div>
+	<% else %>	
+	<% end %>
 
-	<section>
-		<%= render 'shared/stats' %>
-	</section>
+	<% if Resource.top(5).present? %>		
+	<div class="row">	
+		<h3>Top Resources</h3>
+			<ol>
+				<% Resource.top(5).each do |r| %>
+				  <li><%= link_to r.name, r %></li>
+				<% end %>
+			</ol>
+	</div>
+	<% else %>
+	<% end %>
 
-	
+	<% if @user.similar_raters.present? %>
+		<div class="row">	
+		<h3>Similar Raters</h3>
+			<ul>
+				<% @user.similar_raters.each do |r| %>
+				  <li><%= link_to r.name, r %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>	
+	</div>
+</div>	
+
 <% else %>
 
 <div class="center jumbotron">
@@ -18,4 +57,10 @@
   <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
 </div>
 
+<div class="row">
+	<div class="col-md-4">
+		<h3>Top Resources</h3>
+		<p><%= raw(Resource.top(5).map {|r| link_to r.name, r}.join("\n")) %></p>
+	</div>
+</div>
 <% end %>

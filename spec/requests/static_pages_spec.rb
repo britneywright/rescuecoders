@@ -34,6 +34,12 @@ describe "Static pages" do
         it { should have_link("0 following", href: following_user_path(user)) }
         it { should have_link("1 followers", href: followers_user_path(user)) }
       end
+
+      describe "like/dislikes counts" do
+        let(:other_user) { FactoryGirl.create(:user) }        
+        it { should have_link("0 likes", href: user_likes_path(user)) }
+        it { should have_link("0 dislikes", href: user_dislikes_path(user)) }
+      end  
     end            
   end
 

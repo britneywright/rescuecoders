@@ -1,25 +1,18 @@
-class DislikesController < ApplicationController
+class DislikesController < RecommendationsController
+	recommendation_action :dislike
 
-	def index
-		@dislikes = user.dislikes
+	def index	
+		@title = "Disikes"
 	end
-		
+
 	def create
-		@dislike = user.dislike(resource)
+		super
 		redirect_to user
 	end
 
 	def destroy
-		@unlike = user.unlike(resource)
+		super
 		redirect_to user
 	end
-
-	def user
-		User.find(params[:user_id])
-	end
-
-	def resource
-		Resource.find_by(params[:resource_id])
-	end	
 end
 

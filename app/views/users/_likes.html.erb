@@ -6,8 +6,10 @@
 	<div class="row">
 			<h3>Likes</h3>
 		<ul>
-			<li><%= raw(@user.likes.map {|r| link_to r.name, r}.join("\n")) %></li>
-		</ul>
+	<% @user.likes.each do |r| %>
+	  <li><%= link_to r.name, r %></li>
+	<% end %>
+</ul>
 	</div>
 	<% else %>
 	<% end %>	
@@ -16,8 +18,10 @@
 	<div class="row">	
 		<h3>Dislikes</h3>
 		<ul>
-			<li><%= raw(@user.dislikes.map {|r| link_to r.name, r}.join("\n")) %></li>
-		</ul>
+	<% @user.dislikes.each do |r| %>
+	  <li><%= link_to r.name, r %></li>
+	<% end %>
+</ul>
 	</div>	
 	<% else %>
 	<% end %>

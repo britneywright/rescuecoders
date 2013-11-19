@@ -225,5 +225,5 @@ describe "User pages" do
 			it { should have_selector('h3', text: 'Followers') }
 			it { should have_link(user.name, href: user_path(user)) }
 		end
-	end												
+	end
 end	

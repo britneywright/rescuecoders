@@ -1,25 +1,18 @@
-class LikesController < ApplicationController
+class LikesController < RecommendationsController
+	recommendation_action :like
 
-	def index
-		@likes = user.likes
+	def index	
+		super
+		@title = "Likes"
 	end
-		
+
 	def create
-		@like = user.like(resource)
+		super
 		redirect_to user
 	end
 
 	def destroy
-		@unlike = user.unlike(resource)
+		super
 		redirect_to user
 	end
-
-	def user
-		User.find(params[:user_id])
-	end
-
-	def resource
-		Resource.find_by(params[:resource_id])
-	end	
 end
-
