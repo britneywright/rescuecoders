@@ -7,7 +7,7 @@ Learning::Application.routes.draw do
     resources :dislikes, only: [:create, :destroy, :index]
 
   end
-  resources :resources, :kinds, :prices, :levels, :languages
+  resources :resources
   resources :sessions, only: [:new, :create, :destroy]
   resources :relationships, only: [:create, :destroy]
   root to: 'static_pages#home'
@@ -15,6 +15,12 @@ Learning::Application.routes.draw do
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
   match '/about', to: 'static_pages#about', via: 'get'
+
+  get 'resources/languages/:language', to: 'resources#index', as: :language 
+  get 'resources/kinds/:kind', to: 'resources#index', as: :kind
+  get 'resources/levels/:level', to: 'resources#index', as: :level 
+  get 'resources/prices/:price', to: 'resources#index', as: :price        
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

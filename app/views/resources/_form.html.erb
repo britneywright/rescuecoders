@@ -26,20 +26,20 @@
     <%= f.text_area :description %>
   </div>
   <div class="field"> 
-    <%= f.label :kind %><br>
-     <%= collection_check_boxes(:resource, :kind_ids, Kind.all, :id, :name) %>
+    <%= f.label :kind_list, "Type" %><br>
+    <%= f.text_field :kind_list %>
   </div>
   <div class="field">
-    <%= f.label :level %><br>
-    <%= collection_check_boxes(:resource, :level_ids, Level.all, :id, :name) %>
+    <%= f.label :level_list, "Level" %><br>
+    <%= f.text_field :level_list %>
   </div>
   <div class="field">
-    <%= f.label :price %><br>
-    <%= collection_check_boxes(:resource, :price_ids, Price.all, :id, :name) %>
+    <%= f.label :price_list, "Cost" %><br>
+    <%= f.text_field :price_list %>
   </div>
   <div class="field">
-    <%= f.label :language %><br>    
-    <%= collection_check_boxes(:resource, :language_ids, Language.all, :id, :name) %> 
+    <%= f.label :language_list, "Language/Framework" %><br>    
+    <%= f.text_field :language_list %> 
   </div>
   <div class="actions">
       <%= f.submit "Submit", class: "btn btn-large btn-primary" %>    

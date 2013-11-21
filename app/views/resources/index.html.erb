@@ -10,7 +10,7 @@
       <th class="col-md-1">Type</th>
       <th class="col-md-1">Level</th>
       <th class="col-md-1">Cost</th>
-      <th class="col-md-1">Language</th>
+      <th class="col-md-1">Language/Framework</th>
     </tr>
   </thead>
 
@@ -21,10 +21,10 @@
         <p><%= resource.description %>
         <%= link_to 'Edit', edit_resource_path(resource) %> | 
         <%= link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } %></p></td>
-        <td class="col-md-1"><%= resource.kinds.map{|k| k.name}.join(', ') %></td>
-        <td class="col-md-1"><%= resource.levels.map{|lv| lv.name}.join(', ') %></td>
-        <td class="col-md-1"><%= resource.prices.map{|p| p.name}.join(', ') %></td>
-        <td class="col-md-1"><%= resource.languages.map{|l| l.name}.join(', ') %></td>
+        <td class="col-md-1"><%= raw resource.kind_list.map{ |k| link_to k, kind_path(k) }.join(' ') %></td>
+        <td class="col-md-1"><%= raw resource.level_list.map{ |l| link_to l, level_path(l) }.join(' ') %></td>
+        <td class="col-md-1"><%= raw resource.price_list.map{ |p| link_to p, price_path(p) }.join(' ') %></td>
+        <td class="col-md-1"><%= raw resource.language_list.map{ |l| link_to l, language_path(l) }.join(' ') %></td>
       </tr>
     <% end %>
   </tbody>

@@ -4,7 +4,17 @@ class ResourcesController < ApplicationController
   # GET /resources
   # GET /resources.json
   def index
-    @resources = Resource.all
+    tags = []
+    tags << params[:language] unless params[:language].blank?
+    tags << params[:kind] unless params[:kind].blank?
+    tags << params[:level] unless params[:level].blank?
+    tags << params[:price] unless params[:price].blank?
+
+    if tags.count == 1
+      @resources = Resource.tagged_with(tags)
+    else
+      @resources = Resource.all
+    end
   end
 
   # GET /resources/1
@@ -15,18 +25,10 @@ class ResourcesController < ApplicationController
   # GET /resources/new
   def new
     @resource = Resource.new
-    @kinds = Kind.all
-    @languages = Language.all
-    @levels = Level.all
-    @prices = Price.all
   end
 
   # GET /resources/1/edit
-  def edit
-    @kinds = Kind.all
-    @languages = Language.all
-    @levels = Level.all
-    @prices = Price.all    
+  def edit   
   end
 
   # POST /resources
@@ -77,6 +79,6 @@ class ResourcesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def resource_params
-      params.require(:resource).permit(:name, :url, :description, :new_kind, :language_ids =>[], :kind_ids =>[], :level_ids =>[], :price_ids =>[])
+      params.require(:resource).permit(:name, :url, :description, :new_kind, :language_list, :languages, :kind_list, :kinds, :level_list, :levels, :price_list, :prices)
     end
 end

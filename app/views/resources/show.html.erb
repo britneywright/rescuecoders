@@ -1,5 +1,4 @@
 <% provide(:title, @resource.name) %>
-<p id="notice"><%= notice %></p>
   <h2><%= @resource.name %></h2>
 
 
@@ -20,30 +19,40 @@
 </p>
 
 <p>
-  <strong>Language(s):</strong>
-    <% @resource.languages.each do |l| %>
-      <%= link_to l.name, l %>
+  <strong>Language/Framework:</strong>
+    <ul>
+    <% @resource.language_list.each do |l| %>
+      <li><%= link_to l, kind_path(l) %></li>
     <% end %>
   </ul>
 </p>
 
 <p>
   <strong>Kind:</strong>
-    <% @resource.kinds.each do |k| %>
-      <%= link_to k.name, k %>
-    <% end %></p>
+  <ul>
+    <% @resource.kind_list.each do |k| %>
+      <li><%= link_to k, kind_path(k) %></li>
+    <% end %>
+  </ul>
+  </p>
 
 <p>
   <strong>Level:</strong>
-    <% @resource.levels.each do |lv| %>
-      <%= link_to lv.name, lv %>
-    <% end %></p>
+    <ul>
+    <% @resource.level_list.each do |l| %>
+      <li><%= link_to l, kind_path(l) %></li>
+    <% end %>
+  </ul>
+  </p>
 
 <p>
   <strong>Price:</strong>
-    <% @resource.prices.each do |p| %>
-      <%= link_to p.name, p %>
-    <% end %></p>
+    <ul>
+    <% @resource.price_list.each do |p| %>
+      <li><%= link_to p, kind_path(p) %></li>
+    <% end %>
+  </ul>
+  </p>
 </div>
 
 <%= link_to 'Edit', edit_resource_path(@resource), class: "btn btn-default" %> 
