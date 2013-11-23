@@ -1,14 +1,12 @@
 <% if signed_in? %>
 
 <div class="row">
-	<div class="col-md-4">
-		<section>
+	<aside class="col-md-4">
+	<div class="well">
 			<%= render 'shared/stats' %>
-		</section>
-		<section>
 			<%= render 'shared/recommendations' %>
-		</section>
-	</div>
+		</div>
+	</aside>
 	<div class="col-md-8">
 	<% if @user.recommended_resources.present? %>
 		<div class="row">

@@ -1,11 +1,13 @@
 <% @user ||= current_user %>
 <div class="stats">
+	<strong>Recommendations:</strong> 	
 	<a href="<%= user_likes_path(@user) %>">
 		<strong id="likes" class="stat">
 			<%= @user.likes.count %>
 		</strong>
 		likes
 	</a>
+	|
 	<a href="<%= user_dislikes_path(@user) %>">
 		<strong id="dislikes" class="stat">
 			<%= @user.dislikes.count %>
