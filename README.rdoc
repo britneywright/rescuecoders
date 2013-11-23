@@ -22,3 +22,12 @@ Rescue Coders is my Ruby on Rails project that I hope to develop as I continue l
 11/19/2013
 * Added relationships between users
 * Updates to user page and home page for signed in users.
+
+11/20/2013
+* Added twitter handle to user porfile.
+
+11/21/2013
+* Removed habtm assocations and related models. Added acts-as-taggable-gem for resources model.
+
+11/22/2013
+* Added additional fields for user profile.
