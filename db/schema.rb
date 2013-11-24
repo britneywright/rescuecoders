@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131123003346) do
+ActiveRecord::Schema.define(version: 20131124155431) do
 
   create_table "formats", force: true do |t|
     t.string   "name"
@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(version: 20131123003346) do
     t.string   "github"
     t.string   "blog"
     t.text     "about_me"
+    t.string   "pair"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

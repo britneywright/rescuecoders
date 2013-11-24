@@ -3,9 +3,17 @@
 <div class="row">
 	<div class="row">
 		<div class="col-md-4">
-				<%= gravatar_for @user %>
-				<h2><%= @user.name %></h2>
-		</div>	
+			<%= gravatar_for @user %>
+			<h2><%= @user.name %></h2>
+		</div>
+		<% if @user.pair.present? %>
+		<div class="col-md-2 col-md-offset-5 pull-right">
+			<%= link_to @user.pair do %>
+				<%= image_tag "pair-badge.png", :class => "img-responsive" %>
+			<% end %>	
+		</div>
+		<% else %>
+		<% end %>	
 	</div>
 
 <%= render 'attributes' %>
