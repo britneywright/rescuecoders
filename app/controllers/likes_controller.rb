@@ -1,4 +1,4 @@
-class LikesController < RecommendationsController
+class LikesController < RatesController
 	rate_action :like
 
 	def index	
