@@ -1,5 +1,5 @@
 class LikesController < RecommendationsController
-	recommendation_action :like
+	rate_action :like
 
 	def index	
 		super

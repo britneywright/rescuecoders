@@ -6,21 +6,8 @@
 			<%= render 'shared/stats' %>
 			<%= render 'shared/recommendations' %>
 		</div>
-	</aside>
-	<div class="col-md-8">
-	<% if @user.recommended_resources.present? %>
-		<div class="row">
-			<h3>Recommended for You</h3>
-			<ul>
-			<% @user.recommended_resources.each do |r| %>
-	  <li><%= link_to r.name, r %></li>
-	<% end %>
-		</ul>
-		</div>
-	<% else %>	
-	<% end %>
 
-	<% if Resource.top(5).present? %>		
+<% if Resource.top(5).present? %>		
 	<div class="row">	
 		<h3>Top Resources</h3>
 			<ol>
@@ -41,7 +28,29 @@
 				<% end %>
 			</ul>
 		</div>
-	<% end %>	
+	<% end %>			
+	</aside>
+
+	<div class="col-md-8">
+	<% if @user.recommended_resources.present? %>
+		<div class="row">
+			<h3>Recommended for You</h3>
+			<ul>
+			<% @user.recommended_resources.each do |r| %>
+	  <li><%= link_to r.name, r %></li>
+	<% end %>
+		</ul>
+		</div>
+	<% else %>	
+	<% end %>
+
+	<% @user.likes.each do |r| %>
+	<div class="well">
+		<%= @user.name + " liked " + r.name %>
+		<hr />
+		<%= link_to time_ago_in_words(r.updated_at) + " ago", r  %>
+	</div>
+	<% end %>
 	</div>
 </div>	
 

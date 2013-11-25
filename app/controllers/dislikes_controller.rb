@@ -1,5 +1,5 @@
 class DislikesController < RecommendationsController
-	recommendation_action :dislike
+	rate_action :dislike
 
 	def index	
 		@title = "Disikes"

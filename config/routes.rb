@@ -1,12 +1,13 @@
 Learning::Application.routes.draw do
+  get "activities/index"
   resources :users do
     member do
       get :following, :followers
     end
     resources :likes, only: [:create, :destroy, :index]
     resources :dislikes, only: [:create, :destroy, :index]
-
   end
+
   resources :resources
   resources :sessions, only: [:new, :create, :destroy]
   resources :relationships, only: [:create, :destroy]
