@@ -37,4 +37,14 @@
 		</p>	
 	</div>	
 	<%= render 'follow_form' if signed_in? %>
+
+		<% if @user.bookmarks.present? %>	
+		<h3>Bookmarks</h3>
+		<ul>
+	<% @user.bookmarks.each do |r| %>
+	  <li><%= link_to r.name, r %></li>
+	<% end %>
+</ul>
+	<% else %>
+	<% end %>
 </aside>

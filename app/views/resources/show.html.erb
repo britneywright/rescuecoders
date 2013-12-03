@@ -4,12 +4,15 @@
 
   <div class="col-md-4">  
     <div class= "row">
-          <div class="col-md-6">
-      Liked by: <%= @resource.liked_by_count %>
+          <div class="col-md-4">
+      <%= @resource.liked_by_count %> Likes
     </div>
-    <div class="col-md-6">
-      Disliked by: <%= @resource.disliked_by_count %>
+    <div class="col-md-4">
+      <%= @resource.disliked_by_count %> Dislikes
     </div>
+    <div class="col-md-4">
+      <%= @resource.liked_by_count %> Bookmarks
+    </div>    
       </div>
     <%= render 'likes_button' if signed_in? %>
 <div class="well">

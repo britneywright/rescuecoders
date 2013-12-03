@@ -31,3 +31,6 @@ Rescue Coders is my Ruby on Rails project that I hope to develop as I continue l
 
 11/22/2013
 * Added additional fields for user profile.
+
+12/02/2013
+* Added bookmark functionality, but broke "un" actions temporarily. Also started adding more tests so I don't accidentally break any more things.

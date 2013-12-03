@@ -1,28 +1,37 @@
 <% if current_user.likes?(@resource) %>
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-4">
 			<%= render 'unlike' %> 
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-4">
 			<%= render 'dislike' %>
 		</div>
+		<div class="col-md-4">
+			<%= render 'bookmark' %>
+		</div>			
 	</div>			
 <% elsif current_user.dislikes?(@resource) %>
 	<div class="row">
-		<div class="col-md-6">	
+		<div class="col-md-4">	
 			<%= render 'like' %>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-4">
 			<%= render 'undislike' %>
 		</div>
+		<div class="col-md-4">
+			<%= render 'bookmark' %>
+		</div>			
 	</div>	
 <% else %>
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-4">
 			<%= render 'like' %>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-4">
 			<%= render 'dislike' %>
 		</div>
+		<div class="col-md-4">
+			<%= render 'bookmark' %>
+		</div>					
 	</div>	
 <% end %>

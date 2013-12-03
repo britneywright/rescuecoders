@@ -1,0 +1,8 @@
+<div class="row">
+			<h3>Bookmarks</h3>
+		<ul>
+	<% @user.bookmarks.each do |r| %>
+	  <li><%= link_to r.name, r %></li>
+	<% end %>
+</ul>
+	</div>

@@ -6,6 +6,7 @@ Learning::Application.routes.draw do
     end
     resources :likes, only: [:create, :destroy, :index]
     resources :dislikes, only: [:create, :destroy, :index]
+    resources :bookmarks, only: [:create, :destroy, :index]
   end
 
   resources :resources

@@ -14,4 +14,11 @@
 		</strong>
 		dislikes
 	</a>
+	|
+	<a href="<%= user_bookmarks_path(@user) %>">
+		<strong id="bookmarks" class="stat">
+			<%= @user.bookmarks.count %>
+		</strong>
+		bookmarks
+	</a>	
 </div>					
