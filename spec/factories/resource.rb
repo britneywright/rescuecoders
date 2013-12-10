@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :resource do
-    name { "Rails Girls" }
+  factory :resource do |f|
+    f.name { "Rails Girls" }
   end 
 end  

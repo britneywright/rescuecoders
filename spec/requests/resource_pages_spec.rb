@@ -14,18 +14,24 @@ describe "Resource pages" do
 
 	describe "resource page" do
 		before do
-			resource = Resource.first || Resource.create
-			visit resource_path(resource)
+			@resource = Resource.first || Resource.create
+			visit resource_path(@resource)
 		end
 
+		it { should have_selector('h2', text: @resource.name) }
 		it { should have_link('Edit') }
 		it { should have_link('Back') }
 
-		context "with a logged in user" do
+		context "when user logged in" do
 			before do
 				user = User.first || User.create
+				sign_in user
+				visit resource_path(@resource)
 			end
-			it { should have_content('Likes') }
+
+			it { should have_content('Bookmark') }
+			it { should have_content('Dislike') }
+			it { should have_content('Like') }
 		end	
 	end
 end
