@@ -35,7 +35,9 @@ html, body {
 
 
 .navbar-brand {
-  max-width: 260px;
+  .img-responsive {
+    max-width: 260px;
+  }  
 }
 
 /* Set the fixed height of the footer here */
