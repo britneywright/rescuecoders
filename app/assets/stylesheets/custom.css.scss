@@ -29,6 +29,15 @@ html, body {
   padding: 0 0 60px;
 }
 
+.navbar-default {
+  background-color: #fff;
+}
+
+
+.navbar-brand {
+  max-width: 260px;
+}
+
 /* Set the fixed height of the footer here */
 #footer {
   height: 60px;
@@ -90,6 +99,12 @@ h2 {
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+}
+
+.jumbotron {
+  h1 img{
+  max-width: 500px;
+  }
 }
 
 /* sidebar */
