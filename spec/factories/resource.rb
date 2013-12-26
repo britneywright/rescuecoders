@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :resource do |f|
-    f.name { "Rails Girls" }
+    name "Resource Name"
+    url "resource@example.com"
   end 
 end  

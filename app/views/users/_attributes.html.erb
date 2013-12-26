@@ -4,15 +4,15 @@
 			<%= render 'shared/stats' %>
 		</p>
 		<p>
-			<% if @user.twitter_handle.present? || @user.github.present? || @user.blog.present?%>	
+			<% if @user.twitter_handle.present? || @user.github.present? || @user.blog.present? %>	
 				<strong>Find Me:</strong>
 				<% if @user.twitter_handle.present? %>	 
 					<%= link_to @user.twitter_handle do %>
 						<i class="fa fa-twitter-square"></i>
 					<% end %>	
-					<span>&nbsp</span>
 				<% else %>
 				<% end %>
+				<span>&nbsp</span>
 				<% if @user.github.present? %>
 					<%= link_to @user.github do %>
 						<i class="fa fa-github-square"></i>

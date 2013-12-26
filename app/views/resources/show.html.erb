@@ -1,19 +1,14 @@
 <% provide(:title, @resource.name) %>
   <h2><%= @resource.name %></h2>
-
-
   <div class="col-md-4">  
     <div class= "row">
-          <div class="col-md-4">
-      <%= @resource.liked_by_count %> Likes
-    </div>
-    <div class="col-md-4">
-      <%= @resource.disliked_by_count %> Dislikes
-    </div>
-    <div class="col-md-4">
-      <%= @resource.liked_by_count %> Bookmarks
-    </div>    
+      <div class="col-md-8">
+        <%= @resource.liked_by_count %> Likes
       </div>
+      <div class="col-md-8">
+        <%= @resource.disliked_by_count %> Dislikes
+      </div>   
+    </div>
     <%= render 'likes_button' if signed_in? %>
 <div class="well">
 <p>

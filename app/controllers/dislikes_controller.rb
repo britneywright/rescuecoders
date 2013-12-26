@@ -1,7 +1,8 @@
 class DislikesController < RatesController
 	rate_action :dislike
 
-	def index	
+	def index
+		super	
 		@title = "Disikes"
 	end
 

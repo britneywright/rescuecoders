@@ -9,18 +9,18 @@ class RatesController < ApplicationController
 	end
 
 	def destroy
-		user.send("un{rate_action}".to_sym, resource)
+		user.send("un#{rate_action}".to_sym, resource)
 	end
 
 	private
 
 	def user
-		user = User.find(params[:user_id])
+		User.find(params[:user_id])
 	end
 
 	def resource
-		resource = Resource.find(params[:resource_id])
-	end
+		Resource.find(params[:id])
+	end	
 
 	def self.rate_action(action = nil)
 		@rate_action ||= action
